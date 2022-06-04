@@ -5,6 +5,7 @@ import CONFIG, { ApplicationEnv } from '../../config';
 import { error } from '../handlers/errorHandler.handler';
 // import { session } from '../session';
 import { AppRoute } from './app.route';
+import { GraphRoute } from './graph.route';
 
 const v1 = Router();
 // const baseUrl = '/api/backend/v1';
@@ -30,6 +31,11 @@ v1.get(`${baseUrl}/health`, AppRoute.healthCheck);
 v1.get(`${baseUrl}/auth`, AppRoute.auth);
 v1.post(`${baseUrl}/deauth`, AppRoute.deAuth);
 v1.post(`${baseUrl}/delete`, AppRoute.delete);
+
+
+v1.get(`${baseUrl}/graph/auth`, GraphRoute.auth);
+v1.post(`${baseUrl}/graph/deauth`, GraphRoute.deAuth);
+v1.post(`${baseUrl}/graph/delete`, GraphRoute.delete);
 
 v1.use(error);
 
