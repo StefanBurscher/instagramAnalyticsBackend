@@ -3,10 +3,10 @@ import helmet from 'helmet';
 import { createServer } from 'http';
 import morgan from 'morgan';
 import CONFIG, { ApplicationEnv } from './config';
-import { DB } from './services/database.service';
+// import { DB } from './services/database.service';
 
 // Establish database connection
-DB.authenticate();
+// DB.authenticate();
 
 import v1 from './routes/api';
 import webhooks from './routes/webhooks';

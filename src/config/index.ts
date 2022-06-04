@@ -1,9 +1,6 @@
-import environment from 'dotenv';
+const dotenv = require('dotenv')
+const env = dotenv.config({silent: true})
 
-const env = environment.config();
-if (env.error) {
-  throw env.error;
-}
 
 const {
   // Default config
