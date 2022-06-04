@@ -29,7 +29,9 @@ export class AppRoute {
      */
      static async auth(req: Request, res: Response, next: NextFunction) {
       try {
-        console.log('Auth', req.body);
+        console.log('Auth', req.body, req.query);
+        const { code } = req.query;
+        console.log("🚀 ~ file: app.route.ts ~ line 34 ~ AppRoute ~ auth ~ code", code)
 
         res.status(200).end();
       } catch (err) {
