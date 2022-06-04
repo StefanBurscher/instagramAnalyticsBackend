@@ -11,7 +11,7 @@ const baseUrl = '/api/backend/v1';
 
 v1.use(cors({
   origin: (origin, callback) => {
-    ![ApplicationEnv.DEVELOPMENT, ApplicationEnv.RELEASE].includes(CONFIG.NODE_ENV) ? callback(undefined, CONFIG.CORS_DOMAINS.includes(origin)) : callback(undefined, true);
+    ![ApplicationEnv.DEVELOPMENT, ApplicationEnv.RELEASE].includes(CONFIG.NODE_ENV) &&  CONFIG.CORS_DOMAINS ? callback(undefined, CONFIG.CORS_DOMAINS.includes(origin)) : callback(undefined, true);
   },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true
