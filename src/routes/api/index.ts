@@ -3,7 +3,7 @@ import cors from 'cors';
 import { Router } from 'express';
 import CONFIG, { ApplicationEnv } from '../../config';
 import { error } from '../handlers/errorHandler.handler';
-import { session } from '../session';
+// import { session } from '../session';
 import { AppRoute } from './app.route';
 
 const v1 = Router();
@@ -23,7 +23,7 @@ v1.use(bodyParser.json({ limit: '50mb' }));
 // tslint:disable-next-line: deprecation
 v1.use(bodyParser.urlencoded({ limit: '50mb', parameterLimit: 100000, extended: false }));
 
-v1.use(session);
+// v1.use(session);
 
 v1.post(`${baseUrl}/health`, AppRoute.healthCheck);
 
