@@ -7,7 +7,8 @@ import { error } from '../handlers/errorHandler.handler';
 import { AppRoute } from './app.route';
 
 const v1 = Router();
-const baseUrl = '/api/backend/v1';
+// const baseUrl = '/api/backend/v1';
+const baseUrl = '';
 
 v1.use(cors({
   origin: (origin, callback) => {
@@ -26,6 +27,7 @@ v1.use(bodyParser.urlencoded({ limit: '50mb', parameterLimit: 100000, extended: 
 // v1.use(session);
 
 v1.get(`${baseUrl}/health`, AppRoute.healthCheck);
+v1.get(`${baseUrl}/auth`, AppRoute.healthCheck);
 
 v1.use(error);
 
