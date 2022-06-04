@@ -25,7 +25,7 @@ v1.use(bodyParser.urlencoded({ limit: '50mb', parameterLimit: 100000, extended: 
 
 // v1.use(session);
 
-v1.post(`${baseUrl}/health`, AppRoute.healthCheck);
+v1.get(`${baseUrl}/health`, AppRoute.healthCheck);
 
 v1.use(error);
 
