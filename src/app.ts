@@ -41,8 +41,9 @@ app.use(v1);
 
 const server = createServer(app);
 
-server.listen(+CONFIG.PORT, () => {
-  console.log(`Server is listening on port: ${+CONFIG.PORT}`);
+const AppPort = +CONFIG.PORT || 3000
+server.listen(AppPort, () => {
+  console.log(`Server is listening on port: ${AppPort}`);
   console.log('Press CTRL-C to stop\n');
 });
 
