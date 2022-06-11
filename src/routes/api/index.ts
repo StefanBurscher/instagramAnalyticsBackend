@@ -32,6 +32,8 @@ v1.get(`${baseUrl}/auth`, AppRoute.auth);
 v1.post(`${baseUrl}/deauth`, AppRoute.deAuth);
 v1.post(`${baseUrl}/delete`, AppRoute.delete);
 
+v1.post(`${baseUrl}/send-notification`, AppRoute.sendNotification);
+
 
 v1.get(`${baseUrl}/graph/auth`, GraphRoute.auth);
 v1.post(`${baseUrl}/graph/deauth`, GraphRoute.deAuth);
