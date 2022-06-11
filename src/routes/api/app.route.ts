@@ -1,3 +1,4 @@
+import Axios from 'axios';
 import { NextFunction, Request, Response } from 'express';
 // import { DatabaseConnection } from '../../models';
 
@@ -92,15 +93,17 @@ export class AppRoute {
         data: {}
       };
 
-      await fetch("https://exp.host/--/api/v2/push/send", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Accept-encoding": "gzip, deflate",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(message)
-      });
+      await Axios.post("https://exp.host/--/api/v2/push/send", message)
+
+      // await fetch("https://exp.host/--/api/v2/push/send", {
+      //   method: "POST",
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Accept-encoding": "gzip, deflate",
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(message)
+      // });
 
       res.status(200).end();
     } catch (err) {
